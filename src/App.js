@@ -12,13 +12,13 @@ import MySkillsPage from './components/MySkillsPage';
 
 function App() {
 
-  const location = useLocation();
+
 
   return <>
    <GlobalStyle />
 
    <ThemeProvider theme={lightTheme}>
-   <Switch  location={location} key={location.pathname}>
+   <Switch  >
       <Route exact path="/" component={Main}/>
       <Route exact path="/about" component={AboutPage}/>
       <Route exact path="/blog" component={BlogPage}/>
