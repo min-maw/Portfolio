@@ -1,5 +1,7 @@
 // Home button
+
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { PowerBtn } from "../components/AllSvgs";
 
@@ -32,7 +34,9 @@ const Power = styled.button`
 const PowerButton = () => {
   return (
     <Power>
-      <PowerBtn width={30} height={30} fill="currentColor" />
+      <NavLink to="/">
+        <PowerBtn width={30} height={30} fill="currentColor" />
+      </NavLink>
     </Power>
   );
 };
