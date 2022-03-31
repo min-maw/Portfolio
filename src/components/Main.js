@@ -6,6 +6,7 @@ import LogoComponent from "../subComponents/LogoComponent";
 import PowerButton from "../subComponents/PowerButton";
 import SocialIcons from "../subComponents/SocialIcons";
 import { YinYang } from "./AllSvgs";
+import Intro from "./Intro";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -47,8 +48,6 @@ const BLOG = styled(NavLink)`
 const WORK = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   position: absolute;
-  text-shadow: 0 0 0 whitesmoke;
-  animation: smoky 5s;
   top: 50%;
   left: calc(1rem + 2vw);
   transform: translate(-50%, -50%) rotate(-90deg);
@@ -163,7 +162,6 @@ const Main = () => {
             Say hi..
           </motion.h2>
         </Contact>
-
         <BLOG to="/blog">
           <motion.h2
             initial={{
@@ -180,7 +178,6 @@ const Main = () => {
             Blog
           </motion.h2>
         </BLOG>
-
         <WORK to="/work" click={+click}>
           <motion.h2
             initial={{
@@ -197,7 +194,6 @@ const Main = () => {
             Work
           </motion.h2>
         </WORK>
-
         <BottomBar>
           <ABOUT to="/about" click={+click}>
             <motion.h2
@@ -215,7 +211,6 @@ const Main = () => {
               About.
             </motion.h2>
           </ABOUT>
-
           <SKILLS to="/skills">
             <motion.h2
               initial={{
@@ -234,6 +229,7 @@ const Main = () => {
           </SKILLS>
         </BottomBar>
       </Container>
+      {click ? <Intro click={click} /> : null}
     </MainContainer>
   );
 };
