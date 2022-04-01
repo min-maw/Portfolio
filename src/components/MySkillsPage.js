@@ -2,6 +2,7 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme } from "./Themes";
 import { Design, Develope } from "./AllSvgs";
+import { motion } from "framer-motion";
 
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
@@ -9,7 +10,7 @@ import PowerButton from "../subComponents/PowerButton";
 import ParticleComponent from "../subComponents/ParticleComponent";
 import BigTitle from "../subComponents/BigTitle";
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
   height: 100vh;
@@ -19,7 +20,7 @@ const Box = styled.div`
   align-items: center;
 `;
 
-const Main = styled.div`
+const Main = styled(motion.div)`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
   background-color: ${(props) => props.theme.body};
@@ -71,15 +72,45 @@ const Description = styled.div`
   }
 `;
 
+// Framer-motion Configuration
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+
+    transition: {
+      staggerChildren: 0.5,
+      duration: 0.5,
+    },
+  },
+};
+
 const MySkillsPage = () => {
   return (
     <ThemeProvider theme={lightTheme}>
-      <Box>
+      <Box
+        variants={container}
+        initial="hidden"
+        animate="show"
+        exit={{
+          opacity: 0,
+          transition: { duration: 0.5 },
+        }}
+      >
         <LogoComponent theme="light" />
         <SocialIcons theme="light" />
         <PowerButton />
         <ParticleComponent theme="light" />
-        <Main>
+        <Main
+          initial={{
+            x: -200,
+            transition: { type: "spring", duration: 1 },
+          }}
+          animate={{
+            x: 0,
+            transition: { type: "spring", duration: 1 },
+          }}
+        >
           <Title>
             <Design width={40} height={40} /> Designer
           </Title>
@@ -101,7 +132,16 @@ const MySkillsPage = () => {
             </ul>
           </Description>
         </Main>
-        <Main>
+        <Main
+          initial={{
+            x: +200,
+            transition: { type: "spring", duration: 1 },
+          }}
+          animate={{
+            x: 0,
+            transition: { type: "spring", duration: 1 },
+          }}
+        >
           <Title>
             <Develope width={40} height={40} /> Frontend Developer
           </Title>

@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { keyframes, ThemeProvider } from "styled-components";
 import { DarkTheme } from "./Themes";
+import { motion } from "framer-motion";
 
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
@@ -32,7 +33,7 @@ const Spaceman = styled.div`
     height: auto;
   }
 `;
-const Main = styled.div`
+const Main = styled(motion.div)`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
   padding: 2rem;
@@ -53,6 +54,19 @@ const Main = styled.div`
   font-style: italic;
 `;
 
+// Framer-motion config
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+
+    transition: {
+      staggerChildren: 1,
+      duration: 1,
+    },
+  },
+};
+
 const AboutPage = () => {
   return (
     <ThemeProvider theme={DarkTheme}>
@@ -65,7 +79,15 @@ const AboutPage = () => {
         <Spaceman>
           <img src={astronaut} alt="spaceman" />
         </Spaceman>
-        <Main>
+        <Main
+          variants={container}
+          initial="hidden"
+          animate="show"
+          exit={{
+            opacity: 0,
+            transition: { duration: 0.5 },
+          }}
+        >
           I'm a front-end developer located in India. I love to create simple
           yet beautiful websites with great user experience.
           <br /> <br />
