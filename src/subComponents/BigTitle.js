@@ -9,6 +9,9 @@ const Text = styled.h1`
   color: ${(props) => `rgba(${props.theme.textRgba},0.1)`};
   font-size: calc(5rem + 5vw);
   z-index: 0;
+  @media only screen and (max-width: 800px) {
+    font-size: calc(3rem + 5vw);
+  }
 `;
 
 const BigTitle = (props) => {

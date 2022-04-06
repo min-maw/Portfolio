@@ -35,6 +35,9 @@ const Contact = styled(NavLink)`
   right: calc(1rem + 2vw);
   text-decoration: none;
   z-index: 1;
+  @media only screen and (max-width: 800px) {
+    font-size: 0.8em;
+  }
 `;
 const BLOG = styled(NavLink)`
   color: ${(props) => props.theme.text};
@@ -44,15 +47,23 @@ const BLOG = styled(NavLink)`
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
+
+  @media only screen and (max-width: 800px) {
+    font-size: 0.7em;
+  }
 `;
 const WORK = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   position: absolute;
   top: 50%;
-  left: calc(1rem + 2vw);
+  left: 2.7rem;
   transform: translate(-50%, -50%) rotate(-90deg);
   text-decoration: none;
   z-index: 1;
+
+  @media only screen and (max-width: 800px) {
+    font-size: 0.7em;
+  }
 `;
 
 const BottomBar = styled.div`
@@ -69,11 +80,19 @@ const ABOUT = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   text-decoration: none;
   z-index: 1;
+
+  @media only screen and (max-width: 800px) {
+    font-size: 0.7em;
+  }
 `;
 const SKILLS = styled(NavLink)`
   color: ${(props) => props.theme.text};
   text-decoration: none;
   z-index: 1;
+
+  @media only screen and (max-width: 800px) {
+    font-size: 0.7em;
+  }
 `;
 
 const rotate = keyframes`
@@ -106,18 +125,37 @@ const Center = styled.button`
     display: ${(props) => (props.click ? "none" : "inline-block")};
     padding-top: 1rem;
   }
+  @media only screen and (max-width: 800px) {
+    width: ${(props) => (props.click ? "60px" : "150px")};
+    height: ${(props) => (props.click ? "60px" : "150px")};
+  }
+  @media only screen and (max-width: 500px) {
+    width: ${(props) => (props.click ? "40px" : "150px")};
+    height: ${(props) => (props.click ? "40px" : "150px")};
+  }
 `;
 
 const DarkDiv = styled.div`
   position: absolute;
-  top: 0;
+
   background-color: #000;
-  bottom: 0;
-  right: 50%;
+
   width: ${(props) => (props.click ? "50%" : "0%")};
   height: ${(props) => (props.click ? "100%" : "0%")};
   z-index: 1;
   transition: height 0.5s ease, width 1s ease 0.5s;
+  @media only screen and (min-width: 800px) {
+    top: 0;
+    bottom: 0;
+    right: 50%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    right: 0;
+    left: 0;
+    bottom: 50%;
+    width: 100%;
+  }
 `;
 
 const Main = () => {
@@ -136,8 +174,8 @@ const Main = () => {
         <Center click={click}>
           <YinYang
             onClick={() => handleClick()}
-            width={click ? 120 : 200}
-            height={click ? 120 : 200}
+            width={click ? 80 : 200}
+            height={click ? 80 : 200}
             fill="currentColor"
           />
           <span>click here</span>

@@ -11,11 +11,11 @@ const Power = styled.button`
   left: 50%;
   transform: translate(-50%, 0);
   background-color: #fcf6f4;
-  padding: 0.3rem;
+  padding-top: 0.2rem;
   border-radius: 50%;
   border: 1px solid #000;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.3rem;
+  height: 2.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,13 +29,18 @@ const Power = styled.button`
     text-decoration: none;
     color: inherit;
   }
+
+  @media only screen and (max-width: 800px) {
+    width: 2rem;
+    height: 2rem;
+  }
 `;
 
 const PowerButton = () => {
   return (
     <Power>
       <NavLink to="/">
-        <PowerBtn width={30} height={30} fill="currentColor" />
+        <PowerBtn width={25} height={100} fill="currentColor" />
       </NavLink>
     </Power>
   );

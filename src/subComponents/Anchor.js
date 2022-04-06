@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { Anchor, Link } from "../components/AllSvgs";
 
 const Container = styled.div`
+  @media only screen and (max-width: 640px) {
+    display: none;
+  }
   position: relative;
 `;
 const Slider = styled.div`

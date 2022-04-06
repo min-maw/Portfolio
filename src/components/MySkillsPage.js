@@ -18,6 +18,12 @@ const Box = styled(motion.div)`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+    height: auto;
+    padding-top: 7rem;
+    padding-bottom: 30px;
+  }
 `;
 
 const Main = styled(motion.div)`
@@ -37,6 +43,10 @@ const Main = styled(motion.div)`
   &:hover {
     color: ${(props) => props.theme.body};
     background-color: ${(props) => props.theme.text};
+  }
+  @media only screen and (max-width: 800px) {
+    width: 50vw;
+    margin-top: 30px;
   }
 `;
 

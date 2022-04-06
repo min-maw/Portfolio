@@ -27,21 +27,32 @@ const Box = styled(motion.div)`
       top;
   background-repeat: no-repeat;
   background-size: 100% 2px;
-  border-left: 2px solid ${(props) => props.theme.body};
-  border-right: 2px solid ${(props) => props.theme.text};
+
   z-index: 1;
+
+  @media only screen and (min-width: 800px) {
+    border-left: 2px solid ${(props) => props.theme.body};
+    border-right: 2px solid ${(props) => props.theme.text};
+  }
+
+  @media only screen and (max-width: 800px) {
+    border-top: 2px solid ${(props) => props.theme.body};
+    border-bottom: 2px solid ${(props) => props.theme.text};
+  }
 `;
 const SubBox = styled.div`
-  width: 50%;
+  
   position: relative;
   display: flex;
-  .pic {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    width: 100%;
-    height: auto;
+      width: 50%;
+      .pic {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        width: 100%;
+        height: auto;
+      }
   }
 `;
 

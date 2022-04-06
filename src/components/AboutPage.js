@@ -44,7 +44,7 @@ const Main = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: calc(0.6rem + 1vw);
+  font-size: calc(0.45rem + 1vw);
   backdrop-filter: blur(4px);
 
   position: absolute;
@@ -52,6 +52,10 @@ const Main = styled(motion.div)`
   top: 10rem;
   font-family: "Ubuntu Mono", monospace;
   font-style: italic;
+  @media only screen and (max-width: 800px) {
+    height: 50vh;
+    left: calc(3rem + 5vw);
+  }
 `;
 
 // Framer-motion config
