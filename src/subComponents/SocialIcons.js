@@ -23,6 +23,10 @@ const Line = styled(motion.span)`
   height: 8rem;
   background-color: ${(props) =>
     props.color === "dark" ? DarkTheme.text : DarkTheme.body};
+
+  @media only screen and (max-width: 800px) {
+    background-color: black;
+  }
 `;
 
 const SocialIcons = (props) => {
@@ -41,7 +45,13 @@ const SocialIcons = (props) => {
           <Github
             width={25}
             height={25}
-            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+            fill={
+              props.theme === "light"
+                ? "black"
+                : window.innerWidth < 800
+                ? "black"
+                : "white"
+            }
           />
         </NavLink>
       </motion.div>
@@ -59,7 +69,13 @@ const SocialIcons = (props) => {
           <Facebook
             width={25}
             height={25}
-            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+            fill={
+              props.theme === "light"
+                ? "black"
+                : window.innerWidth < 800
+                ? "black"
+                : "white"
+            }
           />
         </NavLink>
       </motion.div>
@@ -76,7 +92,13 @@ const SocialIcons = (props) => {
           <YouTube
             width={25}
             height={25}
-            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+            fill={
+              props.theme === "light"
+                ? "black"
+                : window.innerWidth < 800
+                ? "black"
+                : "white"
+            }
           />
         </NavLink>
       </motion.div>

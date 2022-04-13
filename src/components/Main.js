@@ -83,6 +83,7 @@ const ABOUT = styled(NavLink)`
 
   @media only screen and (max-width: 800px) {
     font-size: 0.7em;
+    color: black;
   }
 `;
 const SKILLS = styled(NavLink)`

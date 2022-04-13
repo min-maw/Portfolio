@@ -13,46 +13,70 @@ const Box = styled(motion.div)`
   width: 65vw;
   height: 55vh;
   display: flex;
-  background: linear-gradient(
-        to right,
-        ${(props) => props.theme.body} 50%,
-        ${(props) => props.theme.text} 50%
-      )
-      bottom,
-    linear-gradient(
-        to right,
-        ${(props) => props.theme.body} 50%,
-        ${(props) => props.theme.text} 50%
-      )
-      top;
-  background-repeat: no-repeat;
-  background-size: 100% 2px;
 
   z-index: 1;
 
   @media only screen and (min-width: 800px) {
     border-left: 2px solid ${(props) => props.theme.body};
     border-right: 2px solid ${(props) => props.theme.text};
+
+    background: linear-gradient(
+          to right,
+          ${(props) => props.theme.body} 50%,
+          ${(props) => props.theme.text} 50%
+        )
+        bottom,
+      linear-gradient(
+          to right,
+          ${(props) => props.theme.body} 50%,
+          ${(props) => props.theme.text} 50%
+        )
+        top;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
   }
 
   @media only screen and (max-width: 800px) {
-    border-top: 2px solid ${(props) => props.theme.body};
-    border-bottom: 2px solid ${(props) => props.theme.text};
+    // border-right: 2px solid ${(props) => props.theme.text};
+    // border-left: 2px solid ${(props) => props.theme.text};
+    // border-bottom: 2px solid ${(props) => props.theme.text};
+    box-sizing: content-box;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right bottom, white, black);
+    border-image-slice: 1;  
+   }
   }
+
+
 `;
 const SubBox = styled.div`
-  
   position: relative;
   display: flex;
-      width: 50%;
-      .pic {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%, 0%);
-        width: 100%;
-        height: auto;
-      }
+
+  @media only screen and (min-width: 800px) {
+    width: 50%;
+    height: auto;
+    .pic {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      width: 100%;
+      height: auto;
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    width: auto;
+    height: 50%;
+    .pic {
+      position: absolute;
+      bottom: -100%;
+      right: 25%;
+      transform: translate(-50%, 0%);
+      width: auto;
+      height: 120%;
+    }
   }
 `;
 
@@ -68,6 +92,9 @@ const Text = styled.div`
     color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
     font-size: calc(0.5rem + 1.5vw);
     font-weight: 300;
+  }
+
+  @media only screen and (max-width: 800px) {
   }
 `;
 
@@ -89,7 +116,7 @@ const Intro = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2 }}
+          transition={{ duration: 2, delay: 1 }}
         >
           <img className="pic" src={Me} alt="Profile Pic" />
         </motion.div>
