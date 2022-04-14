@@ -31,6 +31,7 @@ const Center = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 10rem;
+  z-index: 1;
 `;
 
 const Grid = styled.div`
@@ -42,6 +43,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
   grid-gap: calc(1rem + 2vw);
+  z-index: 1;
 `;
 
 // Framer-motion config
@@ -78,7 +80,7 @@ const BlogPage = () => {
       <Container>
         <LogoComponent />
         <PowerButton />
-        <SocialIcons />
+        <SocialIcons theme={"black"} />
         <AnchorComponent number={numbers} />
         <Center>
           <Grid>

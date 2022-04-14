@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import LogoComponent from "../subComponents/LogoComponent";
@@ -7,9 +7,13 @@ import PowerButton from "../subComponents/PowerButton";
 import SocialIcons from "../subComponents/SocialIcons";
 import { YinYang } from "./AllSvgs";
 import Intro from "./Intro";
+import ParticleComponent from "../subComponents/ParticleComponent";
 
 const MainContainer = styled.div`
-  background: ${(props) => props.theme.body};
+  background: #e5e27a;
+  background: -webkit-linear-gradient(top left, #e5e27a, #ffef0a);
+  background: -moz-linear-gradient(top left, #e5e27a, #ffef0a);
+  background: linear-gradient(to bottom right, #e5e27a, #ffef0a);
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -36,7 +40,7 @@ const Contact = styled(NavLink)`
   text-decoration: none;
   z-index: 1;
   @media only screen and (max-width: 800px) {
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
 `;
 const BLOG = styled(NavLink)`
@@ -55,8 +59,8 @@ const BLOG = styled(NavLink)`
 const WORK = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   position: absolute;
-  top: 50%;
-  left: 2.7rem;
+  top: 49%;
+  left: 1.9rem;
   transform: translate(-50%, -50%) rotate(-90deg);
   text-decoration: none;
   z-index: 1;
@@ -159,18 +163,58 @@ const DarkDiv = styled.div`
   }
 `;
 
+export function useWindowDimension() {
+  const [dimension, setDimension] = useState([
+    window.innerWidth,
+    window.innerHeight,
+  ]);
+  useEffect(() => {
+    const debouncedResizeHandler = debounce(() => {
+      console.log("***** debounced resize"); // See the cool difference in console
+      setDimension([window.innerWidth, window.innerHeight]);
+    }, 100); // 100ms
+    window.addEventListener("resize", debouncedResizeHandler);
+    return () => window.removeEventListener("resize", debouncedResizeHandler);
+  }, []); // Note this empty array. this effect should run only on mount and unmount
+  return dimension;
+}
+
+function debounce(fn, ms) {
+  let timer;
+  return (_) => {
+    clearTimeout(timer);
+    timer = setTimeout((_) => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
+
 const Main = () => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
 
+  const [width, height] = useWindowDimension();
+
   return (
     <MainContainer>
+      <ParticleComponent theme="img" />
       <DarkDiv click={click} />
       <Container>
         <PowerButton />
         <LogoComponent theme={click ? "dark" : "light"} />
-        <SocialIcons theme={click ? "dark" : "light"} />
+        <SocialIcons
+          theme={
+            click
+              ? width < 800
+                ? "black"
+                : "white"
+              : width < 800
+              ? "black"
+              : "black"
+          }
+        />
 
         <Center click={click}>
           <YinYang
@@ -179,12 +223,12 @@ const Main = () => {
             height={click ? 80 : 200}
             fill="currentColor"
           />
-          <span>click here</span>
+          <span onClick={() => handleClick()}>click here</span>
         </Center>
 
         <Contact
           target="_blank"
-          to={{ pathname: "mailto:codebucks27@gmail.com" }}
+          to={{ pathname: "mailto:minmawoo.ucsm@gmail.com" }}
         >
           <motion.h2
             initial={{
@@ -214,7 +258,7 @@ const Main = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Blog
+            BLOG
           </motion.h2>
         </BLOG>
         <WORK to="/work" click={+click}>
@@ -230,7 +274,7 @@ const Main = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Work
+            WORK
           </motion.h2>
         </WORK>
         <BottomBar>
@@ -247,7 +291,7 @@ const Main = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              About.
+              ABOUT.
             </motion.h2>
           </ABOUT>
           <SKILLS to="/skills">
@@ -263,7 +307,7 @@ const Main = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              My Skills.
+              MY SKILLS.
             </motion.h2>
           </SKILLS>
         </BottomBar>

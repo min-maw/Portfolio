@@ -108,7 +108,7 @@ const MySkillsPage = () => {
         }}
       >
         <LogoComponent theme="light" />
-        <SocialIcons theme="light" />
+        <SocialIcons theme="black" />
         <PowerButton />
         <ParticleComponent theme="light" />
         <Main
@@ -161,18 +161,13 @@ const MySkillsPage = () => {
           </Description>
           <Description>
             <strong>Skills</strong>
-            <p>
-              Html, Css, Js, React, Redux, Sass, Bootstrap, Tailwind, Firebase
-              etc.
-            </p>
+            <p>Html, Css, Js, React, Redux, Bootstrap, Tailwind etc.</p>
           </Description>
           <Description>
             <strong>Tools</strong>
             <p>VScode, Github, Codepen etc.</p>
           </Description>
         </Main>
-
-        <BigTitle text="SKILLS" top="80%" right="30%" />
       </Box>
     </ThemeProvider>
   );

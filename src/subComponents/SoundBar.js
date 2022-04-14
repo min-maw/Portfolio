@@ -27,7 +27,7 @@ const Box = styled.div`
   }
 
   @media only screen and (max-width: 800px) {
-    left: 2rem;
+    left: 1.2rem;
     top: 25%;
   }
 `;

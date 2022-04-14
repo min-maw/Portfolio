@@ -38,7 +38,7 @@ const Main = styled(motion.div)`
   color: ${(props) => props.theme.text};
   padding: 2rem;
   width: 50vw;
-  height: 60vh;
+  height: 55vh;
   z-index: 3;
   line-height: 1.5;
   display: flex;
@@ -76,7 +76,7 @@ const AboutPage = () => {
     <ThemeProvider theme={DarkTheme}>
       <Box>
         <LogoComponent theme="dark" />
-        <SocialIcons theme="dark" />
+        <SocialIcons theme="white" />
         <PowerButton />
         <ParticleComponent theme="dark" />
 
@@ -92,12 +92,12 @@ const AboutPage = () => {
             transition: { duration: 0.5 },
           }}
         >
-          I'm a front-end developer located in India. I love to create simple
-          yet beautiful websites with great user experience.
+          I'm a react developer located in Myanmar. I love to create simple yet
+          beautiful websites with great user experience.
           <br /> <br />
           I'm interested in the whole frontend stack Like trying new things and
-          building great projects. I'm an independent freelancer and blogger. I
-          love to write blogs and read books.
+          building great projects. I love playing Guitar 🎸 and reading books
+          📖.
           <br /> <br />I believe everything is an Art when you put your
           consciousness in it. You can connect with me via social links.
         </Main>

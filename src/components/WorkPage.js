@@ -27,14 +27,26 @@ const Main = styled(motion.ul)`
   height: 40vh;
   display: flex;
   color: white;
+
+  @media only screen and (max-width: 800px) {
+    left: calc(10rem + 5vw);
+  }
+  @media only screen and (max-width: 550px) {
+    left: calc(7rem + 1vw);
+  }
+  @media only screen and (max-width: 500px) {
+    left: calc(5rem + 1vw);
+  }
+
+  transition: 0.3s ease;
 `;
 const Rotate = styled.span`
   display: block;
   position: fixed;
   right: 1rem;
   bottom: 1rem;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   z-index: 1;
 `;
 
@@ -57,13 +69,12 @@ const WorkPage = () => {
 
   useEffect(() => {
     let element = ref.current;
-    let YYelement = yinyang.current;
 
     const rotate = () => {
       element.style.transform = `translateX(${-window.pageYOffset}px)`;
 
-      return (YYelement.style.transform =
-        "rotate(" + -window.pageYOffset + " deg)");
+      return (yinyang.current.style.transform =
+        "rotate(" + -window.pageYOffset + "deg)");
     };
 
     window.addEventListener("scroll", rotate);
@@ -76,7 +87,7 @@ const WorkPage = () => {
     <ThemeProvider theme={DarkTheme}>
       <Box>
         <LogoComponent theme="dark" />
-        <SocialIcons theme="dark" />
+        <SocialIcons theme="white" />
         <PowerButton />
 
         <Main
@@ -94,7 +105,7 @@ const WorkPage = () => {
           ))}
         </Main>
         <Rotate ref={yinyang}>
-          <YinYang width={80} height={80} fill={DarkTheme.text} />
+          <YinYang width={40} height={40} fill={DarkTheme.text} />
         </Rotate>
 
         <BigTitle text="WORK" top="10%" right="20%" />

@@ -11,7 +11,7 @@ const Icons = styled.div`
   align-items: center;
   position: fixed;
   bottom: 0;
-  left: 2rem;
+  left: 1.2rem;
   z-index: 3;
   & > *:not(:last-child) {
     margin: 0.4rem 0;
@@ -21,12 +21,7 @@ const Icons = styled.div`
 const Line = styled(motion.span)`
   width: 2px;
   height: 8rem;
-  background-color: ${(props) =>
-    props.color === "dark" ? DarkTheme.text : DarkTheme.body};
-
-  @media only screen and (max-width: 800px) {
-    background-color: black;
-  }
+  background-color: ${(props) => props.color};
 `;
 
 const SocialIcons = (props) => {
@@ -42,17 +37,7 @@ const SocialIcons = (props) => {
           target="_blank"
           to={{ pathname: "https://github.com/minnmawoo" }}
         >
-          <Github
-            width={25}
-            height={25}
-            fill={
-              props.theme === "light"
-                ? "black"
-                : window.innerWidth < 800
-                ? "black"
-                : "white"
-            }
-          />
+          <Github width={25} height={25} fill={props.theme} />
         </NavLink>
       </motion.div>
 
@@ -66,17 +51,7 @@ const SocialIcons = (props) => {
           target="_blank"
           to={{ pathname: "https://facebook.com/codebucks27" }}
         >
-          <Facebook
-            width={25}
-            height={25}
-            fill={
-              props.theme === "light"
-                ? "black"
-                : window.innerWidth < 800
-                ? "black"
-                : "white"
-            }
-          />
+          <Facebook width={25} height={25} fill={props.theme} />
         </NavLink>
       </motion.div>
       <motion.div
@@ -89,17 +64,7 @@ const SocialIcons = (props) => {
           target="_blank"
           to={{ pathname: "https://youtube.com" }}
         >
-          <YouTube
-            width={25}
-            height={25}
-            fill={
-              props.theme === "light"
-                ? "black"
-                : window.innerWidth < 800
-                ? "black"
-                : "white"
-            }
-          />
+          <YouTube width={25} height={25} fill={props.theme} />
         </NavLink>
       </motion.div>
 

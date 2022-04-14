@@ -45,6 +45,7 @@ const Box = styled(motion.div)`
     border-style: solid;
     border-image: linear-gradient(to right bottom, white, black);
     border-image-slice: 1;  
+   
    }
   }
 
@@ -72,7 +73,8 @@ const SubBox = styled.div`
     .pic {
       position: absolute;
       bottom: -100%;
-      right: 25%;
+      right: 5%;
+      left: 20%
       transform: translate(-50%, 0%);
       width: auto;
       height: 120%;
@@ -103,12 +105,12 @@ const Intro = () => {
     <Box
       initial={{ height: 0 }}
       animate={{ height: "55vh" }}
-      transition={{ type: "spring", duration: 2, delay: 1 }}
+      transition={{ type: "spring", duration: 2, delay: 0.1 }}
     >
       <SubBox>
         <Text>
-          <h1>Hi,</h1>
-          <h3>I'm CodeBucks.</h3>
+          <h2>Hi,</h2>
+          <h4>I'm Min Maw Oo.</h4>
           <h6>I design and Code simple yet beautiful websites.</h6>
         </Text>
       </SubBox>
@@ -116,7 +118,7 @@ const Intro = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 1 }}
+          transition={{ duration: 2, delay: 0.1 }}
         >
           <img className="pic" src={Me} alt="Profile Pic" />
         </motion.div>
