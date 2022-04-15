@@ -37,7 +37,11 @@ const Navigation = styled(NavLink)`
 `;
 
 const Navbar = () => {
-  const [activeNav, setActiveNav] = useState("/");
+  const [activeNav, setActiveNav] = useState(window.location.pathname);
+
+  useEffect(() => {
+    setActiveNav(window.location.pathname);
+  });
 
   console.log(activeNav);
   return (
