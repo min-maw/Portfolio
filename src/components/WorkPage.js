@@ -88,7 +88,6 @@ const WorkPage = () => {
       <Box>
         <LogoComponent theme="dark" />
         <SocialIcons theme="white" />
-        <PowerButton />
 
         <Main
           ref={ref}

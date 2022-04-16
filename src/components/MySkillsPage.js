@@ -21,8 +21,8 @@ const Box = styled(motion.div)`
   @media only screen and (max-width: 800px) {
     flex-direction: column;
     height: auto;
-    padding-top: 7rem;
-    padding-bottom: 30px;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
   }
 `;
 
@@ -109,7 +109,6 @@ const MySkillsPage = () => {
       >
         <LogoComponent theme="light" />
         <SocialIcons theme="black" />
-        <PowerButton />
         <ParticleComponent theme="light" />
         <Main
           initial={{

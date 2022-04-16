@@ -80,7 +80,6 @@ const BlogPage = () => {
       >
         <Container>
           <LogoComponent />
-          <PowerButton />
           <SocialIcons theme={"black"} />
           <AnchorComponent number={numbers} />
           <Center>

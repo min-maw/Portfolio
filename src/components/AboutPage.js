@@ -49,7 +49,7 @@ const Main = styled(motion.div)`
 
   position: absolute;
   left: calc(5rem + 5vw);
-  top: 10rem;
+  top: 8rem;
   font-family: "Ubuntu Mono", monospace;
   font-style: italic;
   @media only screen and (max-width: 800px) {
@@ -77,7 +77,6 @@ const AboutPage = () => {
       <Box>
         <LogoComponent theme="dark" />
         <SocialIcons theme="white" />
-        <PowerButton />
         <ParticleComponent theme="dark" />
 
         <Spaceman>

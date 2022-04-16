@@ -43,62 +43,62 @@ const Contact = styled(NavLink)`
     font-size: 0.7em;
   }
 `;
-const BLOG = styled(NavLink)`
-  color: ${(props) => props.theme.text};
-  position: absolute;
-  top: 50%;
-  right: calc(1rem + 2vw);
-  transform: rotate(90deg) translate(-50%, -50%);
-  text-decoration: none;
-  z-index: 1;
+// const BLOG = styled(NavLink)`
+//   color: ${(props) => props.theme.text};
+//   position: absolute;
+//   top: 50%;
+//   right: calc(1rem + 2vw);
+//   transform: rotate(90deg) translate(-50%, -50%);
+//   text-decoration: none;
+//   z-index: 1;
 
-  @media only screen and (max-width: 800px) {
-    font-size: 0.7em;
-  }
-`;
-const WORK = styled(NavLink)`
-  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
-  position: absolute;
-  top: 49%;
-  left: 1.9rem;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  text-decoration: none;
-  z-index: 1;
+//   @media only screen and (max-width: 800px) {
+//     font-size: 0.7em;
+//   }
+// `;
+// const WORK = styled(NavLink)`
+//   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+//   position: absolute;
+//   top: 49%;
+//   left: 1.9rem;
+//   transform: translate(-50%, -50%) rotate(-90deg);
+//   text-decoration: none;
+//   z-index: 1;
 
-  @media only screen and (max-width: 800px) {
-    font-size: 0.7em;
-  }
-`;
+//   @media only screen and (max-width: 800px) {
+//     font-size: 0.7em;
+//   }
+// `;
 
-const BottomBar = styled.div`
-  position: absolute;
-  bottom: 1rem;
-  left: 0;
-  right: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-`;
+// const BottomBar = styled.div`
+//   position: absolute;
+//   bottom: 1rem;
+//   left: 0;
+//   right: 0;
+//   width: 100%;
+//   display: flex;
+//   justify-content: space-evenly;
+// `;
 
-const ABOUT = styled(NavLink)`
-  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
-  text-decoration: none;
-  z-index: 1;
+// const ABOUT = styled(NavLink)`
+//   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+//   text-decoration: none;
+//   z-index: 1;
 
-  @media only screen and (max-width: 800px) {
-    font-size: 0.7em;
-    color: black;
-  }
-`;
-const SKILLS = styled(NavLink)`
-  color: ${(props) => props.theme.text};
-  text-decoration: none;
-  z-index: 1;
+//   @media only screen and (max-width: 800px) {
+//     font-size: 0.7em;
+//     color: black;
+//   }
+// `;
+// const SKILLS = styled(NavLink)`
+//   color: ${(props) => props.theme.text};
+//   text-decoration: none;
+//   z-index: 1;
 
-  @media only screen and (max-width: 800px) {
-    font-size: 0.7em;
-  }
-`;
+//   @media only screen and (max-width: 800px) {
+//     font-size: 0.7em;
+//   }
+// `;
 
 const rotate = keyframes`
 from{
@@ -203,7 +203,6 @@ const Main = () => {
         <ParticleComponent theme="img" />
         <DarkDiv click={click} />
         <Container>
-          <PowerButton />
           <LogoComponent theme={click ? "dark" : "light"} />
           <SocialIcons
             theme={
@@ -246,7 +245,7 @@ const Main = () => {
               Say hi..
             </motion.h2>
           </Contact>
-          <BLOG to="/blog">
+          {/* <BLOG to="/blog">
             <motion.h2
               initial={{
                 y: -200,
@@ -311,7 +310,7 @@ const Main = () => {
                 MY SKILLS.
               </motion.h2>
             </SKILLS>
-          </BottomBar>
+          </BottomBar> */}
         </Container>
         {click ? <Intro click={click} /> : null}
       </MainContainer>
