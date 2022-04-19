@@ -13,6 +13,7 @@ const Box = styled(motion.div)`
   width: 65vw;
   height: 55vh;
   display: flex;
+  backdrop-filter: blur(4px);
 
   z-index: 1;
 

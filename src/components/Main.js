@@ -10,10 +10,12 @@ import Intro from "./Intro";
 import ParticleComponent from "../subComponents/ParticleComponent";
 
 const MainContainer = styled.div`
-  background: #e5e27a;
-  background: -webkit-linear-gradient(top left, #e5e27a, #ffef0a);
-  background: -moz-linear-gradient(top left, #e5e27a, #ffef0a);
-  background: linear-gradient(to bottom right, #e5e27a, #ffef0a);
+  background-image: url(https://cutewallpaper.org/21/web-development-wallpaper/12-Striking-Dark-Wallpaper-Sites-That-Are-Perfect-for-Your-.jpg);
+  background-size: cover;
+  // background: #e5e27a;
+  // background: -webkit-linear-gradient(top left, #e5e27a, #ffef0a);
+  // background: -moz-linear-gradient(top left, #e5e27a, #ffef0a);
+  // background: linear-gradient(to bottom right, #e5e27a, #ffef0a);
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -43,62 +45,6 @@ const Contact = styled(NavLink)`
     font-size: 0.7em;
   }
 `;
-// const BLOG = styled(NavLink)`
-//   color: ${(props) => props.theme.text};
-//   position: absolute;
-//   top: 50%;
-//   right: calc(1rem + 2vw);
-//   transform: rotate(90deg) translate(-50%, -50%);
-//   text-decoration: none;
-//   z-index: 1;
-
-//   @media only screen and (max-width: 800px) {
-//     font-size: 0.7em;
-//   }
-// `;
-// const WORK = styled(NavLink)`
-//   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
-//   position: absolute;
-//   top: 49%;
-//   left: 1.9rem;
-//   transform: translate(-50%, -50%) rotate(-90deg);
-//   text-decoration: none;
-//   z-index: 1;
-
-//   @media only screen and (max-width: 800px) {
-//     font-size: 0.7em;
-//   }
-// `;
-
-// const BottomBar = styled.div`
-//   position: absolute;
-//   bottom: 1rem;
-//   left: 0;
-//   right: 0;
-//   width: 100%;
-//   display: flex;
-//   justify-content: space-evenly;
-// `;
-
-// const ABOUT = styled(NavLink)`
-//   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
-//   text-decoration: none;
-//   z-index: 1;
-
-//   @media only screen and (max-width: 800px) {
-//     font-size: 0.7em;
-//     color: black;
-//   }
-// `;
-// const SKILLS = styled(NavLink)`
-//   color: ${(props) => props.theme.text};
-//   text-decoration: none;
-//   z-index: 1;
-
-//   @media only screen and (max-width: 800px) {
-//     font-size: 0.7em;
-//   }
-// `;
 
 const rotate = keyframes`
 from{
@@ -200,7 +146,6 @@ const Main = () => {
   return (
     <>
       <MainContainer>
-        <ParticleComponent theme="img" />
         <DarkDiv click={click} />
         <Container>
           <LogoComponent theme={click ? "dark" : "light"} />
@@ -245,72 +190,6 @@ const Main = () => {
               Say hi..
             </motion.h2>
           </Contact>
-          {/* <BLOG to="/blog">
-            <motion.h2
-              initial={{
-                y: -200,
-                transition: { type: "spring", duration: 1.5 },
-              }}
-              animate={{
-                y: 0,
-                transition: { type: "spring", duration: 1.5 },
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              BLOG
-            </motion.h2>
-          </BLOG>
-          <WORK to="/work" click={+click}>
-            <motion.h2
-              initial={{
-                y: -200,
-                transition: { type: "spring", duration: 1.5 },
-              }}
-              animate={{
-                y: 0,
-                transition: { type: "spring", duration: 1.5 },
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              WORK
-            </motion.h2>
-          </WORK>
-          <BottomBar>
-            <ABOUT to="/about" click={+click}>
-              <motion.h2
-                initial={{
-                  y: 200,
-                  transition: { type: "spring", duration: 1.5 },
-                }}
-                animate={{
-                  y: 0,
-                  transition: { type: "spring", duration: 1.5 },
-                }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                ABOUT.
-              </motion.h2>
-            </ABOUT>
-            <SKILLS to="/skills">
-              <motion.h2
-                initial={{
-                  y: 200,
-                  transition: { type: "spring", duration: 1.5 },
-                }}
-                animate={{
-                  y: 0,
-                  transition: { type: "spring", duration: 1.5 },
-                }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                MY SKILLS.
-              </motion.h2>
-            </SKILLS>
-          </BottomBar> */}
         </Container>
         {click ? <Intro click={click} /> : null}
       </MainContainer>

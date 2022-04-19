@@ -16,28 +16,63 @@ const Nav = styled.div`
   bottom: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
-  gap: 0.8rem;
-  border-radius: 3rem;
-  backdrop-filter: blur(15);
+  border-radius: 0.65rem;
+
+  box-shadow: 0 8px 32px hsla(231, 44%, 45%, 0.2);
+`;
+
+const Name = styled.div`
+  font-size: smaller;
+  position: absolute;
+  font-weight: 500;
+  transform: translateY(45px);
+  transition: 0.4s;
+  opacity: 0;
+  z-index: 10;
 `;
 
 const Navigation = styled(NavLink)`
   background: transparent;
   padding: 0.9rem;
+  // padding-bottom: 1.4rem;
   border-radius: 50%;
-  display: inline-flex;
   color: var(--color-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 1.1rem;
+  z-index: 10;
+
   @media only screen and (max-width: 800px) {
     padding: 0.5rem;
+    &.active .name {
+      opacity: 0;
+    }
+  }
+
+  @media only screen and (min-width: 800px) {
+    &.active .name {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    &.active .icon {
+      opacity: 0;
+    }
   }
 
   &.aaa:hover {
-    background: rgba(0, 0, 0, 0.3);
+    color: red;
   }
   &.active {
     background: rgba(0, 0, 0, 0.3);
+    color: white;
+    transition: 1s ease;
   }
+`;
+
+const NavList = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 const Navbar = () => {
@@ -50,42 +85,49 @@ const Navbar = () => {
   console.log(activeNav);
   return (
     <Nav>
-      <Navigation
-        exact={true}
-        to="/"
-        onClick={() => setActiveNav("/")}
-        className={activeNav === "/" ? "active" : "aaa"}
-      >
-        <AiOutlineHome />
-      </Navigation>
-      <Navigation
-        to="/blog"
-        onClick={() => setActiveNav("/blog")}
-        className={activeNav === "/blog" ? "active" : "aaa"}
-      >
-        <BiBook />
-      </Navigation>
-      <Navigation
-        to="/work"
-        onClick={() => setActiveNav("/work")}
-        className={activeNav === "/work" ? "active" : "aaa"}
-      >
-        <BiTerminal />
-      </Navigation>
-      <Navigation
-        to="/about"
-        onClick={() => setActiveNav("/about")}
-        className={activeNav === "/about" ? "active" : "aaa"}
-      >
-        <BiUserPin />
-      </Navigation>
-      <Navigation
-        to="/skills"
-        onClick={() => setActiveNav("/skills")}
-        className={activeNav === "/skills" ? "active" : "aaa"}
-      >
-        <BiTrophy />
-      </Navigation>
+      <NavList>
+        <Navigation
+          exact={true}
+          to="/"
+          onClick={() => setActiveNav("/")}
+          className={activeNav === "/" ? "active" : "aaa"}
+        >
+          <AiOutlineHome className="icon" />
+          <Name className="name">Home</Name>
+        </Navigation>
+        <Navigation
+          to="/blog"
+          onClick={() => setActiveNav("/blog")}
+          className={activeNav === "/blog" ? "active" : "aaa"}
+        >
+          <BiBook className="icon" />
+          <Name className="name">Blog</Name>
+        </Navigation>
+        <Navigation
+          to="/work"
+          onClick={() => setActiveNav("/work")}
+          className={activeNav === "/work" ? "active" : "aaa"}
+        >
+          <BiTerminal className="icon" />
+          <Name className="name">Work</Name>
+        </Navigation>
+        <Navigation
+          to="/about"
+          onClick={() => setActiveNav("/about")}
+          className={activeNav === "/about" ? "active" : "aaa"}
+        >
+          <BiUserPin className="icon" />
+          <Name className="name">About</Name>
+        </Navigation>
+        <Navigation
+          to="/skills"
+          onClick={() => setActiveNav("/skills")}
+          className={activeNav === "/skills" ? "active" : "aaa"}
+        >
+          <BiTrophy className="icon" />
+          <Name className="name">Skills</Name>
+        </Navigation>
+      </NavList>
     </Nav>
   );
 };
