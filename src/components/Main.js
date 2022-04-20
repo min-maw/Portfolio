@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import LogoComponent from "../subComponents/LogoComponent";
-import PowerButton from "../subComponents/PowerButton";
+import DownloadButton from "../subComponents/DownloadButton";
 import SocialIcons from "../subComponents/SocialIcons";
 import { YinYang } from "./AllSvgs";
 import Intro from "./Intro";
@@ -148,6 +148,7 @@ const Main = () => {
       <MainContainer>
         <DarkDiv click={click} />
         <Container>
+          <DownloadButton />
           <LogoComponent theme={click ? "dark" : "light"} />
           <SocialIcons
             theme={
