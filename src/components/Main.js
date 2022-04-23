@@ -9,6 +9,9 @@ import { YinYang } from "./AllSvgs";
 import Intro from "./Intro";
 import ParticleComponent from "../subComponents/ParticleComponent";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
+
 const MainContainer = styled.div`
   background-image: url(https://cutewallpaper.org/21/web-development-wallpaper/12-Striking-Dark-Wallpaper-Sites-That-Are-Perfect-for-Your-.jpg);
   background-size: cover;
@@ -35,14 +38,16 @@ const Container = styled.div`
 `;
 
 const Contact = styled(NavLink)`
-  color: ${(props) => props.theme.text};
+  color: white;
   position: absolute;
   top: 2rem;
   right: calc(1rem + 2vw);
   text-decoration: none;
-  z-index: 1;
-  @media only screen and (max-width: 800px) {
-    font-size: 0.7em;
+  z-index: 10;
+
+  font-size: 1.5rem;
+  &:hover {
+    font-size: 1.6rem;
   }
 `;
 
@@ -62,19 +67,28 @@ const Center = styled.button`
   transform: translate(-50%, -50%);
   border: none;
   outline: none;
-  background-color: transparent;
+  background: white;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: all 1s ease;
+  border-radius: 50%;
   & > :first-child {
     animation: ${rotate} infinite 1.5s linear;
   }
-  & > :last-child {
-    display: ${(props) => (props.click ? "none" : "inline-block")};
-    padding-top: 1rem;
+  // & > :last-child {
+  //   display: ${(props) => (props.click ? "none" : "inline-block")};
+  //   padding-top: 1rem;
+  // }
+
+  &:hover {
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+      0 0 200px #03e9f4;
+    filter: hue-rotate(110deg);
   }
   @media only screen and (max-width: 800px) {
     width: ${(props) => (props.click ? "60px" : "150px")};
@@ -149,47 +163,37 @@ const Main = () => {
         <DarkDiv click={click} />
         <Container>
           <DownloadButton />
-          <LogoComponent theme={click ? "dark" : "light"} />
-          <SocialIcons
-            theme={
-              click
-                ? width < 800
-                  ? "black"
-                  : "white"
-                : width < 800
-                ? "black"
-                : "black"
-            }
-          />
+          <LogoComponent theme={"dark"} />
+          <SocialIcons theme={"white"} />
 
           <Center click={click}>
             <YinYang
               onClick={() => handleClick()}
-              width={click ? 80 : 200}
-              height={click ? 80 : 200}
+              width={click ? 80 : 120}
+              height={click ? 80 : 120}
               fill="currentColor"
             />
-            <span onClick={() => handleClick()}>click here</span>
+            {/* <span onClick={() => handleClick()}>click here</span> */}
           </Center>
 
           <Contact
             target="_blank"
             to={{ pathname: "mailto:minmawoo.ucsm@gmail.com" }}
           >
-            <motion.h2
+            <motion.div
               initial={{
-                y: -200,
+                x: 500,
                 transition: { type: "spring", duration: 1.5 },
               }}
               animate={{
-                y: 0,
+                x: 0,
                 transition: { type: "spring", duration: 1.5 },
               }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              Say hi..
-            </motion.h2>
+              <FontAwesomeIcon icon={faEnvelopeOpenText} />
+            </motion.div>
           </Contact>
         </Container>
         {click ? <Intro click={click} /> : null}

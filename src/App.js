@@ -11,7 +11,8 @@ import WorkPage from "./components/WorkPage";
 import MySkillsPage from "./components/MySkillsPage";
 import { AnimatePresence } from "framer-motion";
 import SoundBar from "./subComponents/SoundBar";
-import Navbar from "./components/Navbar";
+import Navbar from "./subComponents/Navbar";
+// import Navbar from "./components/Navbar";
 
 function App() {
   const location = useLocation();

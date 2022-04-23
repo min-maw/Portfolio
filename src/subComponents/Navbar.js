@@ -10,15 +10,18 @@ const Nav = styled.div`
   background: #add8e6;
   width: max-content;
   display: block;
-  padding: 0.7rem 1.7rem;
+  padding: 0.3rem 1.2rem;
   z-index: 10;
   position: fixed;
   bottom: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 0.65rem;
-
   box-shadow: 0 8px 32px hsla(231, 44%, 45%, 0.2);
+
+  @media only screen and (max-width: 800px) {
+    padding: 0.3rem 1.2rem;
+  }
 `;
 
 const Name = styled.div`
@@ -26,14 +29,14 @@ const Name = styled.div`
   position: absolute;
   font-weight: 500;
   transform: translateY(45px);
-  transition: 0.4s;
   opacity: 0;
+  transition: 0.4s;
   z-index: 10;
 `;
 
 const Navigation = styled(NavLink)`
   background: transparent;
-  padding: 0.9rem;
+
   // padding-bottom: 1.4rem;
   border-radius: 50%;
   color: var(--color-light);
@@ -43,30 +46,27 @@ const Navigation = styled(NavLink)`
   font-size: 1.1rem;
   z-index: 10;
 
-  @media only screen and (max-width: 800px) {
-    padding: 0.5rem;
-    &.active .name {
-      opacity: 0;
-    }
+  &.aaa {
+    padding: 1rem;
   }
 
-  @media only screen and (min-width: 800px) {
-    &.active .name {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    &.active .icon {
-      opacity: 0;
-    }
+  &.active .name {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  &.active .icon {
+    transform: translateY(-35px);
+    background: rgba(0, 0, 0, 0.3);
+    border: 4px solid black;
+    backdrop-filter: blur(4px);
+
+    padding: 0.6rem;
+    border-radius: 50%;
+    color: white;
   }
 
   &.aaa:hover {
     color: red;
-  }
-  &.active {
-    background: rgba(0, 0, 0, 0.3);
-    color: white;
-    transition: 1s ease;
   }
 `;
 
@@ -95,18 +95,11 @@ const Navbar = () => {
           <AiOutlineHome className="icon" />
           <Name className="name">Home</Name>
         </Navigation>
+
         <Navigation
           to="/blog"
           onClick={() => setActiveNav("/blog")}
           className={activeNav === "/blog" ? "active" : "aaa"}
-        >
-          <BiBook className="icon" />
-          <Name className="name">Blog</Name>
-        </Navigation>
-        <Navigation
-          to="/work"
-          onClick={() => setActiveNav("/work")}
-          className={activeNav === "/work" ? "active" : "aaa"}
         >
           <BiTerminal className="icon" />
           <Name className="name">Work</Name>

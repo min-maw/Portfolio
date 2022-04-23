@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const Download = styled.div`
   position: fixed;
@@ -12,6 +13,7 @@ const Download = styled.div`
   transition: 0.5s;
   overflow: hidden;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  cursor: pointer;
 
   &:hover {
     background: #03e9f4;
@@ -99,12 +101,17 @@ const Span = styled.div`
 const DownloadButton = () => {
   return (
     <>
-      <Download>
-        <Span></Span>
-        <Span></Span>
-        <Span></Span>
-        <Span></Span>Download CV
-      </Download>
+      <a
+        href="https://drive.google.com/uc?export=download&id=1iqTpqyaQSo572AELdp_ldBZ820YPAvsi"
+        // target="_blank"
+      >
+        <Download>
+          <Span></Span>
+          <Span></Span>
+          <Span></Span>
+          <Span></Span>Download CV
+        </Download>
+      </a>
     </>
   );
 };
