@@ -8,8 +8,8 @@ const Box = styled(motion(NavLink))`
   text-decoration: none;
   height: 20rem;
   padding: 1rem;
-  color: ${(props) => props.theme.text};
-  border: 2px solid ${(props) => props.theme.text};
+  color: ${(props) => props.theme.body};
+  border: 2px solid ${(props) => props.theme.body};
   backdrop-filter: blur(2px);
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -40,7 +40,7 @@ const Title = styled.h3`
   padding-top: 1rem;
   font-family: "Karla", sans-serif;
   font-weight: 700;
-  border-bottom: 1px solid ${(props) => props.theme.text};
+  border-bottom: 1px solid ${(props) => props.theme.body};
   ${Box}:hover & {
     border-bottom: 1px solid ${(props) => props.theme.body};
   }

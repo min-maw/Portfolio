@@ -35,7 +35,7 @@ const SocialIcons = (props) => {
         <NavLink
           style={{ color: "inherit" }}
           target="_blank"
-          to={{ pathname: "https://github.com/minnmawoo" }}
+          to={{ pathname: "https://github.com/min-maw" }}
         >
           <Github width={25} height={25} fill={props.theme} />
         </NavLink>
@@ -49,12 +49,12 @@ const SocialIcons = (props) => {
         <NavLink
           style={{ color: "inherit" }}
           target="_blank"
-          to={{ pathname: "https://facebook.com/codebucks27" }}
+          to={{ pathname: "https://web.facebook.com/minnmawoo.ucsm" }}
         >
           <Facebook width={25} height={25} fill={props.theme} />
         </NavLink>
       </motion.div>
-      <motion.div
+      {/* <motion.div
         initial={{ transform: "scale(0)" }}
         animate={{ scale: [0, 1, 1.5, 1] }}
         transition={{ type: "spring", duration: 1, delay: 1.6 }}
@@ -66,7 +66,7 @@ const SocialIcons = (props) => {
         >
           <YouTube width={25} height={25} fill={props.theme} />
         </NavLink>
-      </motion.div>
+      </motion.div> */}
 
       <Line
         color={props.theme}

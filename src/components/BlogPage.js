@@ -4,7 +4,7 @@ import img from "../assets/Images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg";
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 
-import { Blogs } from "../data/BlogData";
+import { Blogs } from "../data/BlogData/BlogData";
 import BlogComponent from "./BlogComponent";
 import AnchorComponent from "../subComponents/Anchor";
 import BigTitle from "../subComponents/BigTitle";
@@ -18,7 +18,7 @@ const MainContainer = styled(motion.div)`
   background-position: center;
 `;
 const Container = styled.div`
-  background-color: ${(props) => `rgba(${props.theme.bodyRgba},0.8)`};
+  background-color: ${(props) => `rgba(${props.theme.textRgba},0.8)`};
   width: 100%;
   height: auto;
   position: relative;
@@ -78,8 +78,8 @@ const BlogPage = () => {
         }}
       >
         <Container>
-          <LogoComponent />
-          <SocialIcons theme={"black"} />
+          <LogoComponent theme={"dark"} />
+          <SocialIcons theme={"white"} />
           <AnchorComponent number={numbers} />
           <Center>
             <Grid>
@@ -88,7 +88,7 @@ const BlogPage = () => {
               })}
             </Grid>
           </Center>
-          <BigTitle text="BLOG" top="5rem" left="5rem" />
+          <BigTitle text="PROJECTS" top="5rem" left="2rem" />
         </Container>
       </MainContainer>
     </>
