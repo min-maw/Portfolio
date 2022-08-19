@@ -15,9 +15,9 @@ import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 const MainContainer = styled.div`
   background-image: url(https://cutewallpaper.org/21/web-development-wallpaper/12-Striking-Dark-Wallpaper-Sites-That-Are-Perfect-for-Your-.jpg);
   background-size: cover;
-  background: #e5e27a;
-  background: -webkit-linear-gradient(top left, #e5e27a, #ffef0a);
-  background: -moz-linear-gradient(top left, #e5e27a, #ffef0a);
+  // background: #e5e27a;
+  // background: -webkit-linear-gradient(top left, #e5e27a, #ffef0a);
+  // background: -moz-linear-gradient(top left, #e5e27a, #ffef0a);
   // background: linear-gradient(to bottom right, #e5e27a, #ffef0a);
   width: 100vw;
   height: 100vh;
