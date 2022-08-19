@@ -53,10 +53,10 @@ const Navigation = styled(NavLink)`
 
   &.active .name {
     opacity: 1;
-    transform: translateY(20px);
+    transform: translateY(3px);
   }
   &.active .icon {
-    transform: translateY(-35px);
+    transform: translateY(-45px);
     background: rgba(0, 0, 0, 0.3);
     border: 4px solid black;
     backdrop-filter: blur(4px);
