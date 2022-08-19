@@ -5,8 +5,8 @@ export const Blogs = [
     tags: ["react", "CSS", "LocalStorage"],
     date: "Sept, 2020",
     imgSrc:
-      "http://drive.google.com/uc?export=view&id=1liyH-9qDeJR0M5LbWVpYMDMjCUMplaED",
-    link: "https://github.com/min-maw/CodePen-clone-with-React",
+      "http://drive.google.com/uc?export=view&id=1BXDEX6069eAbAD0gkT4Uejqcnp9uDxCo",
+    link: "https://github.com/devM2O/CodePen-clone-with-React",
   },
 
   {
@@ -15,17 +15,17 @@ export const Blogs = [
     tags: ["react", "redux", "framer-motion"],
     date: "April, 2022",
     imgSrc:
-      "http://drive.google.com/uc?export=view&id=1LroYddZaLrXOnF-DtJABU9DtDrEPkDxH",
-    link: "https://github.com/min-maw/ReactTodoList",
+      "http://drive.google.com/uc?export=view&id=1Pqw5AsfYIqB6oiEnFxBmySzNYUTwr_g-",
+    link: "https://github.com/devM2O/ReactTodoList",
   },
   {
     id: 3,
     name: "building a flashcard quiz application using React while connecting to an external API.",
-    tags: ["react", "ecternal API"],
+    tags: ["react", "external API"],
     date: "Oct, 2020",
     imgSrc:
-      "http://drive.google.com/uc?export=view&id=1KO1ScFC9vsJCz8IeTDWMjXqRlIizB-8r",
-    link: "https://github.com/min-maw/flash-card-quiz-react",
+      "http://drive.google.com/uc?export=view&id=1742RgW0T4D-4ni5a5Ti81V-ZWZWPj9nV",
+    link: "https://github.com/devM2O/flash-card-quiz-react",
   },
 
   {
@@ -34,7 +34,7 @@ export const Blogs = [
     tags: ["react", "framer-motion", "styled-components"],
     date: "March, 2022",
     imgSrc:
-      "http://drive.google.com/uc?export=view&id=1QyCRy3ZCh1wnzTaOwP8A2eZWlRj12CQN",
-    link: "https://github.com/min-maw/React-sidebar",
+      "http://drive.google.com/uc?export=view&id=1GXpKKt_UyMsBH7xSrxSZ3Oaa3y8R2M68",
+    link: "https://github.com/devM2O/React-sidebar",
   },
 ];
