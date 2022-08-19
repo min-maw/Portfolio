@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Links } from "tsparticles/Options/Classes/Particles/Links/Links";
 
