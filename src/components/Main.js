@@ -31,7 +31,6 @@ const MainContainer = styled.div`
     font-family: "Karla", sans-serif;
     font-weight: 500;
   }
-  z-index: -10;
 `;
 
 const Container = styled.div`
