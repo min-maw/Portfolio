@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Links } from "tsparticles/Options/Classes/Particles/Links/Links";
 
-const Box = styled(motion.div)`
+const Box = styled(motion.a)`
   width: calc(10rem + 15vw);
   text-decoration: none;
   height: 20rem;
