@@ -31,7 +31,7 @@ const Image = styled.div`
   background-size: cover;
   border: 1px solid transparent;
   background-position: center center;
-  ${Box}:hover & {
+  ${a}:hover & {
     border: 1px solid ${(props) => props.theme.body};
   }
 `;
@@ -42,7 +42,7 @@ const Title = styled.h3`
   font-family: "Karla", sans-serif;
   font-weight: 700;
   border-bottom: 1px solid ${(props) => props.theme.body};
-  ${Box}:hover & {
+  ${a}:hover & {
     border-bottom: 1px solid ${(props) => props.theme.body};
   }
 `;
