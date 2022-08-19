@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Links } from "tsparticles/Options/Classes/Particles/Links/Links";
 
-const a = styled(motion(Link))`
+const Box = styled(motion(div))`
   width: calc(10rem + 15vw);
   text-decoration: none;
   height: 20rem;
@@ -31,7 +31,7 @@ const Image = styled.div`
   background-size: cover;
   border: 1px solid transparent;
   background-position: center center;
-  ${a}:hover & {
+  ${Box}:hover & {
     border: 1px solid ${(props) => props.theme.body};
   }
 `;
@@ -42,7 +42,7 @@ const Title = styled.h3`
   font-family: "Karla", sans-serif;
   font-weight: 700;
   border-bottom: 1px solid ${(props) => props.theme.body};
-  ${a}:hover & {
+  ${Box}:hover & {
     border-bottom: 1px solid ${(props) => props.theme.body};
   }
 `;
@@ -76,16 +76,18 @@ const BlogComponent = (props) => {
   const { name, tags, date, imgSrc, link } = props.blog;
   return (
     <Container variants={Item}>
-      <a href={link} target="_blank">
-        <Image img={imgSrc} />
-        <Title>{name}</Title>
-        <HashTags>
-          {tags.map((t, id) => {
-            return <Tag key={id}>#{t}</Tag>;
-          })}
-        </HashTags>
-        <Date>{date}</Date>
-      </a>
+      <Box href={link}>
+        <a href={link} target="_blank">
+          <Image img={imgSrc} />
+          <Title>{name}</Title>
+          <HashTags>
+            {tags.map((t, id) => {
+              return <Tag key={id}>#{t}</Tag>;
+            })}
+          </HashTags>
+          <Date>{date}</Date>
+        </a>
+      </Box>
     </Container>
   );
 };
