@@ -76,8 +76,8 @@ const BlogComponent = (props) => {
   const { name, tags, date, imgSrc, link } = props.blog;
   return (
     <Container variants={Item}>
-      <Box target="_blank">
-        <a href={link}>
+      <a href={link}>
+        <Box target="_blank">
           <Image img={imgSrc} />
           <Title>{name}</Title>
           <HashTags>
@@ -86,8 +86,8 @@ const BlogComponent = (props) => {
             })}
           </HashTags>
           <Date>{date}</Date>
-        </a>
-      </Box>
+        </Box>
+      </a>
     </Container>
   );
 };
