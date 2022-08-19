@@ -177,7 +177,7 @@ const Main = () => {
           </Center>
 
           <Contact target="_blank">
-            <a href="mailto:minmawoo.ucsm@gmail.com">
+            <a href="mailto:minmawoo.ucsm@gmail.com" style={{ color: "white" }}>
               <motion.div
                 initial={{
                   x: 500,
