@@ -110,14 +110,14 @@ const MySkillsPage = () => {
         <SocialIcons theme="black" />
         <ParticleComponent theme="light" />
         <Main
-          initial={{
-            x: -200,
-            transition: { type: "spring", duration: 1 },
-          }}
-          animate={{
-            x: 0,
-            transition: { type: "spring", duration: 1 },
-          }}
+        // initial={{
+        //   x: -100,
+        //   transition: { type: "spring", duration: 1 },
+        // }}
+        // animate={{
+        //   x: 0,
+        //   transition: { type: "spring", duration: 1 },
+        // }}
         >
           <Title>
             <Design width={40} height={40} /> Designer
@@ -141,14 +141,14 @@ const MySkillsPage = () => {
           </Description>
         </Main>
         <Main
-          initial={{
-            x: +200,
-            transition: { type: "spring", duration: 1 },
-          }}
-          animate={{
-            x: 0,
-            transition: { type: "spring", duration: 1 },
-          }}
+        // initial={{
+        //   x: +100,
+        //   transition: { type: "spring", duration: 1 },
+        // }}
+        // animate={{
+        //   x: 0,
+        //   transition: { type: "spring", duration: 1 },
+        // }}
         >
           <Title>
             <Develope width={40} height={40} /> Frontend Developer
