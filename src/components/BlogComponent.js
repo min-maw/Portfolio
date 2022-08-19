@@ -11,8 +11,13 @@ const Box = styled(motion.a)`
   padding: 1rem;
   color: ${(props) => props.theme.body};
   border: 2px solid ${(props) => props.theme.body};
+
+  border-radius: 7px;
+  background-color: rgba(103, 128, 159, 0.1);
   backdrop-filter: blur(2px);
+
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -29,7 +34,8 @@ const Image = styled.div`
   width: 100%;
   height: 60%;
   background-size: cover;
-  border: 1px solid transparent;
+  border: 1px solid;
+  border-radius: 7px;
   background-position: center center;
   ${Box}:hover & {
     border: 1px solid ${(props) => props.theme.body};

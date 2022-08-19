@@ -9,6 +9,7 @@ import "../App.css";
 const Nav = styled.div`
   background: #add8e6;
   width: max-content;
+  height: 50px;
   display: block;
   padding: 0.3rem 1.2rem;
   z-index: 10;
