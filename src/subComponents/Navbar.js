@@ -8,7 +8,7 @@ import "../App.css";
 
 const Nav = styled.div`
   background: #add8e6;
-  width: max-content;
+  width: 250px;
   height: 50px;
   display: block;
   padding: 0.3rem 1.2rem;
@@ -54,6 +54,7 @@ const Navigation = styled(NavLink)`
   &.active .name {
     opacity: 1;
     transform: translateY(3px);
+    color: black;
   }
   &.active .icon {
     transform: translateY(-45px);
