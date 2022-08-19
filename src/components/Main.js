@@ -178,7 +178,7 @@ const Main = () => {
 
           <Contact
             target="_blank"
-            to={{ pathname: "mailto:minmawoo.ucsm@gmail.com" }}
+            to={{ pathname: "/mailto:minmawoo.ucsm@gmail.com" }}
           >
             <motion.div
               initial={{
