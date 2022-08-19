@@ -176,24 +176,23 @@ const Main = () => {
             {/* <span onClick={() => handleClick()}>click here</span> */}
           </Center>
 
-          <Contact
-            target="_blank"
-            to={{ pathname: "mailto:minmawoo.ucsm@gmail.com" }}
-          >
-            <motion.div
-              initial={{
-                x: 500,
-                transition: { type: "spring", duration: 1.5 },
-              }}
-              animate={{
-                x: 0,
-                transition: { type: "spring", duration: 1.5 },
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <FontAwesomeIcon icon={faEnvelopeOpenText} />
-            </motion.div>
+          <Contact target="_blank">
+            <a href="mailto:minmawoo.ucsm@gmail.com">
+              <motion.div
+                initial={{
+                  x: 500,
+                  transition: { type: "spring", duration: 1.5 },
+                }}
+                animate={{
+                  x: 0,
+                  transition: { type: "spring", duration: 1.5 },
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <FontAwesomeIcon icon={faEnvelopeOpenText} />
+              </motion.div>
+            </a>
           </Contact>
         </Container>
         {click ? <Intro click={click} /> : null}
