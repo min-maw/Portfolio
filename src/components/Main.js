@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import LogoComponent from "../subComponents/LogoComponent";
 import DownloadButton from "../subComponents/DownloadButton";
@@ -37,7 +37,7 @@ const Container = styled.div`
   padding: 2rem;
 `;
 
-const Contact = styled(NavLink)`
+const Contact = styled(Link)`
   color: white;
   position: absolute;
   top: 2rem;
@@ -178,7 +178,7 @@ const Main = () => {
 
           <Contact
             target="_blank"
-            to={{ pathname: "/mailto:minmawoo.ucsm@gmail.com" }}
+            to={{ pathname: "mailto:minmawoo.ucsm@gmail.com" }}
           >
             <motion.div
               initial={{
