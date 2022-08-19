@@ -76,18 +76,16 @@ const BlogComponent = (props) => {
   const { name, tags, date, imgSrc, link } = props.blog;
   return (
     <Container variants={Item}>
-      <a href={link} target="_blank">
-        <Box target="_blank">
-          <Image img={imgSrc} />
-          <Title>{name}</Title>
-          <HashTags>
-            {tags.map((t, id) => {
-              return <Tag key={id}>#{t}</Tag>;
-            })}
-          </HashTags>
-          <Date>{date}</Date>
-        </Box>
-      </a>
+      <Box href={link} target="_blank">
+        <Image img={imgSrc} />
+        <Title>{name}</Title>
+        <HashTags>
+          {tags.map((t, id) => {
+            return <Tag key={id}>#{t}</Tag>;
+          })}
+        </HashTags>
+        <Date>{date}</Date>
+      </Box>
     </Container>
   );
 };
