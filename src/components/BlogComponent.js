@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Links } from "tsparticles/Options/Classes/Particles/Links/Links";
 
-const Box = styled(motion(Link))`
+const a = styled(motion(Link))`
   width: calc(10rem + 15vw);
   text-decoration: none;
   height: 20rem;
@@ -76,7 +76,7 @@ const BlogComponent = (props) => {
   const { name, tags, date, imgSrc, link } = props.blog;
   return (
     <Container variants={Item}>
-      <Box to={{ pathname: link }} target="_blank">
+      <a href={link} target="_blank">
         <Image img={imgSrc} />
         <Title>{name}</Title>
         <HashTags>
@@ -85,7 +85,7 @@ const BlogComponent = (props) => {
           })}
         </HashTags>
         <Date>{date}</Date>
-      </Box>
+      </a>
     </Container>
   );
 };
