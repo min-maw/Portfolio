@@ -102,7 +102,7 @@ const DownloadButton = () => {
   return (
     <>
       <a
-        href="https://drive.google.com/uc?export=download&id=1iqTpqyaQSo572AELdp_ldBZ820YPAvsi"
+        href="https://drive.google.com/uc?export=download&id=15VLITdN7-e46-8VeyTLhivk8FaOs19TH"
         // target="_blank"
       >
         <Download>
